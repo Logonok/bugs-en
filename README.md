@@ -1,58 +1,74 @@
-# Evado Boilerplate App
+# Bug Tracking System
 
-Lightweight and feature-rich template built on 
-[Evado Declarative Framework](https://github.com/mkhorin/evado) 
-for rapid web app development.
+A web application for tracking errors in projects and their fixes, 
+built without writing any code using the
+[Evado Declarative Framework](https://github.com/mkhorin/evado).
 
-![Evado Declarative Framework](https://github.com/mkhorin/evado/blob/master/doc/evado-framework-steps.jpg)
+#### App workflow
 
-## Installation
+- Administrator creates employees and assigns them roles (manager, executor).
+- Administrator creates projects to track bugs.
+- Managers create tasks and describes defects found in projects.
+Additional files (screenshots, etc.) can be attached if required.
+- Managers assign task executors to fix bugs.
+- Executors fix bugs and return tasks for review. 
+- Managers test solutions.
+If the defects are eliminated, the task is closed; otherwise, it returns to work.
+
+Employees can comment on tasks in order to quickly resolve emerging issues.
+In addition, employees can keep track of the time spent.
+
+## Typical installation
 
 #### Install environment
 - [Node.js](https://nodejs.org) (version 12)
 - [MongoDB](https://www.mongodb.com/download-center/community) (version 4)
 
 #### Linux
-Copy template files to /app
+Clone application to /app
 ```sh
 cd /app
 npm install
 NODE_ENV=development node console/install
+NODE_ENV=development node console/start
 ```
 
 #### Windows
-Copy template files to c:/app
+Clone application to c:/app
 ```sh
 cd c:/app
 npm install
 set NODE_ENV=development
 node console/install
-```
-
-## Start app
-
-#### Linux
-```sh
-cd /app
-NODE_ENV=development node console/start
-```
-
-#### Windows
-```sh
-cd c:/app
-set NODE_ENV=development
 node console/start
 ```
-  
-## Usage
- 
-Web interface: [http://localhost:3000](http://localhost:3000)
 
-Sign in as administrator:
+## Docker installation
+
+Clone application to /app
+```sh
+cd /app
+docker-compose up -d mongo
+docker-compose up --build installer
+docker-compose up -d server
+```
+
+## Usage
+
+Web interface: **http://localhost:3000**
+
+Login as executor:
+```sh
+Email: b@b.b
+Password: 123456
+```
+Login as manager:
+```sh
+Email: s@s.s
+Password: 123456
+```
+Login as administrator:
 ```sh
 Email: a@a.a
 Password: 123456
 ```
-
-## Tutorial
-- [Build an App Without Coding](http://nervebit.com)

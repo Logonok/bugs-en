@@ -1,0 +1,16 @@
+{
+  "label": "Create employee",
+  "description": "Employee creation view",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "user",
+      "eagerLoading": true,
+      "orderNumber": 10
+    },
+    {
+      "name": "name",
+      "orderNumber": 20
+    }
+  ]
+}

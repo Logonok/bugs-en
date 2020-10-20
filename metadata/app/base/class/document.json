@@ -1,0 +1,95 @@
+{
+  "abstract": false,
+  "description": "File document attached to the task",
+  "header": ".name",
+  "label": "Document",
+  "attrs": [
+    {
+      "name": "file",
+      "label": "File",
+      "type": "file",
+      "description": "Link to file in the repository",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "string",
+      "description": "Document name",
+      "commonSearchable": true,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": true,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "string",
+          "orderNumber": 10,
+          "max": 1024
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "text",
+      "description": "Document description",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "string",
+          "orderNumber": 10,
+          "max": 1024
+        }
+      ]
+    }
+  ],
+  "behaviors": [
+    {
+      "type": "file",
+      "orderNumber": 10,
+      "description": "File storage behavior",
+      "imageOnly": false,
+      "maxSize": 10000000,
+      "nameAttr": "name"
+    }
+  ]
+}

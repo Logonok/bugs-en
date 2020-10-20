@@ -1,0 +1,65 @@
+{
+  "label": "Main section",
+  "description": "Main section of the side menu",
+  "nodes": [
+    {
+      "name": "assignedToMe",
+      "label": "Tasks assigned to me",
+      "description": "List of tasks assigned to me",
+      "orderNumber": 10,
+      "class": "task",
+      "view": "listAssigned"
+    },
+    {
+      "name": "createdByMe",
+      "label": "Tasks I created",
+      "description": "List of tasks I have created",
+      "orderNumber": 20,
+      "class": "task",
+      "view": "listCreated"
+    },
+    {
+      "name": "myEmployee",
+      "label": "My employee",
+      "description": "An employee associated with the current system user",
+      "orderNumber": 30,
+      "class": "employee",
+      "view": "listMy"
+    },
+    {
+      "name": "newTasks",
+      "label": "New tasks",
+      "description": "New task list",
+      "orderNumber": 40,
+      "class": "task",
+      "view": "listNew",
+      "options": {
+        "separatorBefore": true
+      }
+    },
+    {
+      "name": "tasks",
+      "label": "Tasks",
+      "description": "List of all tasks",
+      "orderNumber": 50,
+      "class": "task"
+    },
+    {
+      "name": "projects",
+      "label": "Projects",
+      "description": "Project list",
+      "orderNumber": 60,
+      "class": "project",
+      "options": {
+        "separatorBefore": true
+      }
+    },
+    {
+      "name": "employees",
+      "label": "Employees",
+      "description": "List of all employees",
+      "orderNumber": 70,
+      "class": "employee"
+    }
+  ]
+}

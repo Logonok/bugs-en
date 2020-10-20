@@ -1,0 +1,37 @@
+{
+  "label": "New tasks",
+  "description": "List of new tasks",
+  "filter": {
+    "_state": "new"
+  },
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "project",
+      "eagerLoading": true,
+      "orderNumber": 20
+    },
+    {
+      "name": "name",
+      "orderNumber": 30
+    },
+    {
+      "name": "priority",
+      "orderNumber": 50
+    },
+    {
+      "name": "executor",
+      "eagerLoading": true,
+      "orderNumber": 60
+    },
+    {
+      "name": "author",
+      "eagerLoading": true,
+      "orderNumber": 70
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 80
+    }
+  ]
+}

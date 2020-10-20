@@ -1,0 +1,18 @@
+{
+  "label": "My employee",
+  "description": "A list view of my employee",
+  "filter": {
+    "user": "$user"
+  },
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "user",
+      "orderNumber": 20
+    }
+  ]
+}

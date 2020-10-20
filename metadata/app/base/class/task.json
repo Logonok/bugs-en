@@ -1,0 +1,463 @@
+{
+  "abstract": false,
+  "description": "Task for eliminating a defect found in a project",
+  "header": ".name",
+  "label": "Task",
+  "attrs": [
+    {
+      "name": "_state",
+      "label": "State",
+      "type": "string",
+      "viewType": "state",
+      "description": "A service attribute that contains the state of the object",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "project",
+      "label": "Project",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Link to a project",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": true,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "project",
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "string",
+      "description": "Brief defect description",
+      "commonSearchable": true,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": true,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "text",
+      "description": "Full defect description",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 40,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "priority",
+      "label": "Priority",
+      "type": "string",
+      "viewType": "radioList",
+      "description": "Task importance",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 50,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "enums": [
+        {
+          "items": [
+            {
+              "value": "low",
+              "text": "Low",
+              "orderNumber": 10
+            },
+            {
+              "value": "average",
+              "text": "Average",
+              "orderNumber": 20
+            },
+            {
+              "value": "high",
+              "text": "High",
+              "orderNumber": 30
+            },
+            {
+              "value": "critical",
+              "text": "Critical",
+              "orderNumber": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "executor",
+      "label": "Executor",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Link to the employee responsible for fixing the defect",
+      "commands": [
+        "add",
+        "remove",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": true,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "null",
+      "orderNumber": 60,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "employee",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "author",
+      "label": "Author",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Link to the employee who created the task.\nBy default, the employee associated with the system user is selected.",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "defaultValue": "$user.meta.base.employee",
+      "eagerLoading": true,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "null",
+      "orderNumber": 70,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "employee",
+      "readOnly": true,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "_createdAt",
+      "label": "Date of creation",
+      "type": "date",
+      "viewType": "localDatetime",
+      "description": "A service attribute that contains the creation date of the object. \nThe creation date representation is a local date because it depends on the time zone of the client viewing the date.",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 80,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "documents",
+      "label": "Documents",
+      "type": "ref",
+      "description": "Document links are stored in the task.\nThus, the same document can be associated with different tasks.",
+      "commands": [
+        "add",
+        "remove",
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "documents",
+      "hidden": false,
+      "history": false,
+      "multiple": true,
+      "onDelete": "null",
+      "orderNumber": 90,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "document",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "options": {
+        "css": "no-label"
+      }
+    },
+    {
+      "name": "comments",
+      "label": "Comments",
+      "type": "backref",
+      "description": "List of comments related to the task",
+      "commands": [
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": true,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "comments",
+      "hidden": false,
+      "history": false,
+      "listView": "listInTask",
+      "multiple": true,
+      "orderNumber": 100,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "task",
+      "refClass": "comment",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "options": {
+        "css": "no-label"
+      }
+    },
+    {
+      "name": "works",
+      "label": "Work log",
+      "type": "backref",
+      "description": "List of works related to the task.",
+      "commands": [
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": true,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "works",
+      "hidden": false,
+      "history": false,
+      "listView": "listInTask",
+      "multiple": true,
+      "orderNumber": 110,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "task",
+      "refClass": "work",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "options": {
+        "css": "no-label"
+      }
+    }
+  ],
+  "groups": [
+    {
+      "name": "tabs",
+      "label": "Tabs",
+      "orderNumber": 1000,
+      "readOnly": false,
+      "required": false,
+      "type": "tabs"
+    },
+    {
+      "active": true,
+      "name": "documents",
+      "label": "Documents",
+      "orderNumber": 1010,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "comments",
+      "label": "Comments",
+      "orderNumber": 1020,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "works",
+      "label": "Works",
+      "orderNumber": 1030,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    }
+  ],
+  "states": [
+    {
+      "name": "new",
+      "label": "New",
+      "defaults": true,
+      "description": "The task is pending",
+      "readOnly": false
+    },
+    {
+      "name": "inProgress",
+      "label": "In progress",
+      "defaults": false,
+      "description": "The task is in the process of being solved",
+      "readOnly": false
+    },
+    {
+      "name": "done",
+      "label": "Done",
+      "defaults": false,
+      "description": "The task has been solved, but not tested",
+      "readOnly": false
+    },
+    {
+      "name": "closed",
+      "label": "Closed",
+      "defaults": false,
+      "description": "The task has been solved and tested",
+      "readOnly": true
+    }
+  ],
+  "transitions": [
+    {
+      "name": "start",
+      "label": "Get started",
+      "description": "A prerequisite for getting started is the task executor",
+      "hint": "Start working on the task",
+      "nullStartState": false,
+      "startStates": [
+        "new",
+        "done"
+      ],
+      "finalState": "inProgress",
+      "condition": [
+        "NOT EMPTY",
+        "executor"
+      ],
+      "orderNumber": 10
+    },
+    {
+      "name": "complete",
+      "label": "Complete",
+      "hint": "The task has been solved",
+      "nullStartState": false,
+      "startStates": [
+        "inProgress"
+      ],
+      "finalState": "done",
+      "orderNumber": 20
+    },
+    {
+      "name": "stop",
+      "label": "Stop work",
+      "hint": "Stop working on the task",
+      "nullStartState": false,
+      "startStates": [
+        "inProgress"
+      ],
+      "finalState": "new",
+      "orderNumber": 30
+    },
+    {
+      "name": "reject",
+      "label": "Reject task",
+      "hint": "Testing failed",
+      "nullStartState": false,
+      "startStates": [
+        "done"
+      ],
+      "finalState": "new",
+      "orderNumber": 40
+    },
+    {
+      "name": "close",
+      "label": "Close",
+      "hint": "Defect elimination tested",
+      "nullStartState": false,
+      "startStates": [
+        "done"
+      ],
+      "finalState": "closed",
+      "orderNumber": 50
+    },
+    {
+      "name": "reopen",
+      "label": "Reopen",
+      "hint": "Return the task to work",
+      "nullStartState": false,
+      "startStates": [
+        "closed"
+      ],
+      "finalState": "new",
+      "orderNumber": 60
+    }
+  ]
+}

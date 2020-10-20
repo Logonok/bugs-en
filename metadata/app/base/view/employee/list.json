@@ -1,0 +1,15 @@
+{
+  "label": "Employee list",
+  "description": "Default view of employee in list",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "user",
+      "orderNumber": 20
+    }
+  ]
+}

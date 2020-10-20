@@ -2,19 +2,19 @@
 
 module.exports = {
 
-    title: 'Boilerplate',
+    title: 'Bugs',
 
     components: {
         'db': {
             settings: {
-                'database': process.env.MONGO_NAME || 'evado-boilerplate',
+                'database': process.env.MONGO_NAME || 'logonok-bugs-en',
             }
         },
         'cookie': {
-            secret: 'boilerplate.evado.sign' // key to sign cookie
+            secret: 'logonok-bugs-en'
         },
         'session': {
-            secret: 'boilerplate.evado.sign'  // key to sign session ID cookie
+            secret: 'logonok-bugs-en'
         },
         'i18n': {
             language: 'en'

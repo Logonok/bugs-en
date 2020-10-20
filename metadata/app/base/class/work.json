@@ -1,0 +1,113 @@
+{
+  "abstract": false,
+  "description": "Recording work on a task",
+  "label": "Work",
+  "attrs": [
+    {
+      "name": "task",
+      "label": "Task",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Link to the task",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "task",
+      "readOnly": true,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "duration",
+      "label": "Duration (minutes)",
+      "type": "integer",
+      "description": "Time spent on work",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "number",
+          "orderNumber": 10,
+          "integerOnly": true,
+          "max": 10000,
+          "min": 1
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "label": "Work description",
+      "type": "text",
+      "description": "Description of the work done",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "author",
+      "label": "Author",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Link to the author of the work. \nBy default, the employee associated with the system user is selected.",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "defaultValue": "$user.meta.base.employee",
+      "eagerLoading": true,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 40,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "employee",
+      "readOnly": true,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ]
+}
