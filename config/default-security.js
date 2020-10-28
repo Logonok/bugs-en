@@ -150,7 +150,7 @@ module.exports = {
             description: 'An employee who corrects errors in tasks'
         },
         'manager': {
-            label: 'Менеджер',
+            label: 'Manager',
             description: 'An employee who creates and reviews tasks'
         },
         'employee': {

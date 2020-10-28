@@ -1,6 +1,6 @@
 # Bug Tracking System
 
-A web application for tracking errors in projects and their fixes, 
+A web application for tracking errors in projects and fixes, 
 built without writing any code using the
 [Evado Declarative Framework](https://github.com/mkhorin/evado).
 
@@ -12,11 +12,12 @@ built without writing any code using the
 Additional files (screenshots, etc.) can be attached if required.
 - Managers assign task executors to fix bugs.
 - Executors fix bugs and return tasks for review. 
-- Managers test solutions.
-If the defects are eliminated, the task is closed; otherwise, it returns to work.
+- Managers test solutions. If the defects are resolved, the task is closed; otherwise, it returns to work.
 
-Employees can comment on tasks in order to quickly resolve emerging issues.
-In addition, employees can keep track of the time spent.
+Employees can comment on tasks to quickly resolve issues that arise.
+In addition, employees can keep a track of time spent.
+
+[![Evado Declarative Framework](doc/poster.jpg)](https://youtu.be/9ENIua84hmo)
 
 ## Typical installation
 
