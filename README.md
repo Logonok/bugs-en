@@ -17,7 +17,7 @@ Additional files (screenshots, etc.) can be attached if required.
 Employees can comment on tasks to quickly resolve issues that arise.
 In addition, employees can keep a track of time spent.
 
-[![Evado Declarative Framework](doc/poster.jpg)](https://youtu.be/9ENIua84hmo)
+[![Web app without writing any code](doc/poster.jpg)](https://youtu.be/9ENIua84hmo)
 
 ## Typical installation
 
