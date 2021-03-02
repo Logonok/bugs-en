@@ -27,38 +27,42 @@
       "view": "listMy"
     },
     {
+      "name": "divider1",
+      "orderNumber": 40,
+      "type": "divider"
+    },
+    {
       "name": "newTasks",
       "label": "New tasks",
       "description": "New task list",
-      "orderNumber": 40,
+      "orderNumber": 50,
       "class": "task",
-      "view": "listNew",
-      "options": {
-        "separatorBefore": true
-      }
+      "view": "listNew"
     },
     {
       "name": "tasks",
       "label": "Tasks",
       "description": "List of all tasks",
-      "orderNumber": 50,
+      "orderNumber": 60,
       "class": "task"
+    },
+    {
+      "name": "divider2",
+      "orderNumber": 70,
+      "type": "divider"
     },
     {
       "name": "projects",
       "label": "Projects",
       "description": "Project list",
-      "orderNumber": 60,
-      "class": "project",
-      "options": {
-        "separatorBefore": true
-      }
+      "orderNumber": 80,
+      "class": "project"
     },
     {
       "name": "employees",
       "label": "Employees",
       "description": "List of all employees",
-      "orderNumber": 70,
+      "orderNumber": 90,
       "class": "employee"
     }
   ]
