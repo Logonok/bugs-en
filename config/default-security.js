@@ -38,7 +38,7 @@ module.exports = {
             type: 'class',
             class: ['task', 'comment', 'work']
         },
-        rule: 'author'
+        rules: 'author'
     }, {
         description: 'Manage your own documents',
         roles: 'employee',
@@ -48,7 +48,7 @@ module.exports = {
             type: 'class',
             class: 'document'
         },
-        rule: 'creator'
+        rules: 'creator'
     }, {
         description: 'Employee cannot change task state',
         roles: 'employee',
@@ -76,7 +76,7 @@ module.exports = {
             type: 'transition',
             class: 'task'
         },
-        rule: 'author'
+        rules: 'author'
     }, {
         description: 'Executor can change the state of tasks assigned to him',
         roles: 'executor',
@@ -86,7 +86,7 @@ module.exports = {
             type: 'transition',
             class: 'task'
         },
-        rule: 'executor'
+        rules: 'executor'
     }, {
         description: 'Manager cannot start, stop, and complete work on tasks',
         roles: 'manager',
