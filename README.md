@@ -56,7 +56,7 @@ docker-compose up -d server
 
 ## Usage
 
-Web interface: **http://localhost:3000**
+Web interface `http://localhost:3000`
 
 Login as executor:
 ```sh
