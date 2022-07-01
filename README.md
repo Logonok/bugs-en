@@ -23,7 +23,7 @@ In addition, employees can keep a track of time spent.
 
 #### Install environment
 - [Node.js](https://nodejs.org) (version 16)
-- [MongoDB](https://www.mongodb.com/download-center/community) (version 4)
+- [MongoDB](https://www.mongodb.com/download-center/community) (version 5)
 
 #### Linux
 Clone application to `/app`
