@@ -1,6 +1,6 @@
 {
   "label": "List in task",
-  "description": "List view of work in a task",
+  "description": "A list view of work in a task",
   "readOnly": true,
   "attrs": [
     {
